@@ -10,7 +10,7 @@ func main() {
 
 	//cards = append(cards, "Six of Spades")
 
-	cards := newDeck()
+	//cards := newDeck()
 
 	//for i, card := range cards {
 	//	fmt.Println(i, card)
@@ -24,7 +24,10 @@ func main() {
 
 	//fmt.Println(cards.toString())
 
-	cards.saveToFile("my_cards")
+	//cards.saveToFile("my_cards")
+
+	cards := newDeckFromFile("my_cards")
+	cards.print()
 }
 
 //func newCard() string {
