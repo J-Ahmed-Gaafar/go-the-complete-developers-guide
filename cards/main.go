@@ -6,8 +6,11 @@ func main() {
 	//card = "Five of Diamonds"
 
 	//cards := []string{"Ace of Diamonds", newCard()}
-	cards := deck{"Ace of Diamonds", newCard()}
-	cards = append(cards, "Six of Spades")
+	//cards := deck{"Ace of Diamonds", newCard()}
+
+	//cards = append(cards, "Six of Spades")
+
+	cards := newDeck()
 
 	//for i, card := range cards {
 	//	fmt.Println(i, card)
@@ -15,6 +18,6 @@ func main() {
 	cards.print()
 }
 
-func newCard() string {
-	return "Five of Diamonds"
-}
+//func newCard() string {
+//	return "Five of Diamonds"
+//}
