@@ -7,9 +7,12 @@ func main() {
 	//card := "Ace of Spades"
 	//card = "Five of Diamonds"
 
-	card := newCard()
+	cards := []string{"Ace of Diamonds", newCard()}
+	cards = append(cards, "Six of Spades")
 
-	fmt.Println(card)
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
 }
 
 func newCard() string {
