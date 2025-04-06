@@ -15,7 +15,12 @@ func main() {
 	//for i, card := range cards {
 	//	fmt.Println(i, card)
 	//}
-	cards.print()
+
+	//cards.print()
+
+	hand, remainingCards := deal(cards, 5)
+	hand.print()
+	remainingCards.print()
 }
 
 //func newCard() string {
