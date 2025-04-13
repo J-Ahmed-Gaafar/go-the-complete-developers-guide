@@ -6,16 +6,17 @@ import (
 	"os"
 )
 
+type logWriter struct{}
+
 func main() {
-	resp, err := http.Get("https://google.com")
+	resp, err := http.Get("http://google.com")
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Error:", err)
 		os.Exit(1)
 	}
-
-	//fmt.Println(resp)
 
 	bs := make([]byte, 99999)
 	resp.Body.Read(bs)
 	fmt.Println(string(bs))
+
 }
