@@ -27,8 +27,12 @@ func main() {
 	//fmt.Println(<-c)
 	//fmt.Println(<-c) // Will hang up the program
 
-	for {
-		go checkLink(<-c, c)
+	// for {
+	// 	go checkLink(<-c, c)
+	// }
+
+	for l := range c {
+		go checkLink(l, c)
 	}
 }
 
@@ -37,9 +41,11 @@ func checkLink(link string, c chan string) {
 
 	if err != nil {
 		fmt.Println(link, "might be down!")
+		//c <- "Might be down, I think"
 		c <- link
 	}
 
 	fmt.Println(link, "is up!")
+	//c <- "Yep it's up"
 	c <- link
 }
