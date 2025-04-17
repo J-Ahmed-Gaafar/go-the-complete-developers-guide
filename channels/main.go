@@ -21,6 +21,11 @@ func main() {
 	}
 
 	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	//fmt.Println(<-c) // Will hang up the program
 }
 
 func checkLink(link string, c chan string) {
