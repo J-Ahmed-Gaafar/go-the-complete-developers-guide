@@ -7,11 +7,11 @@ import (
 
 func main() {
 	links := []string{
-		"https://google.com",
-		"https://facebook.com",
-		"https://stackoverflow.com",
-		"https://golang.org",
-		"https://amazon.com",
+		"http://google.com",
+		"http://facebook.com",
+		"http://stackoverflow.com",
+		"http://golang.org",
+		"http://amazon.com",
 	}
 
 	c := make(chan string)
@@ -19,14 +19,6 @@ func main() {
 	for _, link := range links {
 		go checkLink(link, c)
 	}
-
-	//fmt.Println(<-c)
-	//fmt.Println(<-c)
-	//fmt.Println(<-c)
-	//fmt.Println(<-c)
-	//fmt.Println(<-c)
-	//fmt.Println(<-c) // Will hang up the program
-
 	for i := 0; i < len(links); i++ {
 		fmt.Println(<-c)
 	}
@@ -34,10 +26,10 @@ func main() {
 
 func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
-
 	if err != nil {
 		fmt.Println(link, "might be down!")
 		c <- "Might be down I think"
+		return
 	}
 
 	fmt.Println(link, "is up!")
